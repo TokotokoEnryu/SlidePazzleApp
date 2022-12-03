@@ -1,7 +1,7 @@
 // Wrtie your code here.
-var btnStart = document.getElementsByName("btn-start")[0];
-var btnMakeQuiz = document.getElementsByName("btn-makequiz")[0];
-var btnClear = document.getElementsByName("btn-clear")[0];
+var btnStart = document.getElementsByName("btn-start");
+var btnMakeQuiz = document.getElementsByName("btn-makequiz");
+var btnClear = document.getElementsByName("btn-clear");
 
 function main() {
     btnStart.onclick((e) => {
