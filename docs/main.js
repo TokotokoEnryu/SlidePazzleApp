@@ -4,6 +4,8 @@ var btnMakeQuiz = document.getElementById("btn-makequiz");
 var btnClear = document.getElementById("btn-clear");
 
 function main() {
+    console.log("JavaScript Start!");
+    
     btnStart.onclick((e) => {
         console.log("Hello, start calculation.");
     });
