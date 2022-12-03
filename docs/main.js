@@ -6,14 +6,14 @@ var btnClear = document.getElementById("btn-clear");
 function main() {
     console.log("JavaScript Start!");
     
-    btnStart.onclick((e) => {
+    btnStart.onclick = (e) => {
         console.log("Hello, start calculation.");
-    });
-    btnMakeQuiz.onclick((e) => {
+    };
+    btnMakeQuiz.onclick = (e) => {
         console.log("Hello, start making quiz.");
-    });
-    btnClear.onclick((e) => {
+    };
+    btnClear.onclick = (e) => {
         console.log("Hello, clear input panel.");
-    })
+    };
 }
 main();
