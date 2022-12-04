@@ -30,27 +30,27 @@ function setMessageBox(s) {
 
 function createPazzlePanel() {
     let svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    svg.width = 300;
-    svg.height = 300;
-    svg.classList.add("pazzle-panel");
+    svg.setAttribute('width', 300);
+    svg.setAttribute('height', 300);
+    svg.classList.add("pazzle-canvas");
     let colorList_ = Object.values(colorList);
     for (let i=0; i<3; i++) {
         for (let j=0; j<3; j++) {
             let rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-            rect.x = 100+j + 5;
-            rect.y = 100+i + 5;
-            rect.width = 90;
-            rect.height = 90;
+            rect.setAttribute('x', 100+j + 5);
+            rect.setAttribute('y', 100+i + 5);
+            rect.setAttribute('width', 90);
+            rect.setAttribute('height', 90);
             rect.colorIndex = 0;
-            rect.fill = blankColor;
+            rect.setAttribute('fill', blankColor);
             rect.onclick = (e) => {
                 let elem = e.target;
                 elem.colorIndex += 1;
                 if (elem.colorIndex >= colorList_.length) {
-                    elem.fill = blankColor;
+                    elem.setAttribute('fill', blankColor);
                     elem.colorIndex = -1;
                 } else {
-                    elem.fill = colorIndex_[elem.colorIndex];
+                    elem.setAttribute('fill', colorIndex_[elem.colorIndex]);
                 }
             };
             svg.appendChild(rect);
