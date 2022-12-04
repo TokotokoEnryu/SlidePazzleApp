@@ -43,13 +43,13 @@ function noscroll(e) {
 };
 function showPanelMenu() {
     panelMenu.classList.add('show');
-    document.addEventListener('wheel', noscroll);
-    document.addEventListener('touchmove', noscroll);
+    document.addEventListener('wheel', noscroll, {'passive': false});
+    document.addEventListener('touchmove', noscroll, {'passive': false});
 }
 function closePanelMenu() {
     panelMenu.classList.remove('show');
-    document.removeEventListener('touchmove', noscroll);
-    document.removeEventListener('wheel', noscroll);
+    document.removeEventListener('touchmove', noscroll, {'passive': false});
+    document.removeEventListener('wheel', noscroll, {'passive': false});
 }
 var selectedPanel = undefined;
 function createMenuLi(color) {
