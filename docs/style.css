@@ -28,6 +28,12 @@ body {
   box-shadow: 6px 6px rgb(1 1 1 / 30%);
   margin: 0 auto;
 }
+.input-pazzle-canvas {
+  margin-left: calc(49% - 160px);
+  @media screen and (max-width: 734px) {
+    margin-left: calc(100% - 160px);
+  }
+}
 
 /* border color */
 .red-border {
