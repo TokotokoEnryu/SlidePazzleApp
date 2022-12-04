@@ -41,7 +41,7 @@ function createPazzlePanel() {
             rect.setAttribute('y', 100*i + 5);
             rect.setAttribute('width', 90);
             rect.setAttribute('height', 90);
-            rect.colorIndex = 0;
+            rect.colorIndex = -1;
             rect.setAttribute('fill', blankColor);
             rect.onclick = (e) => {
                 let elem = e.target;
