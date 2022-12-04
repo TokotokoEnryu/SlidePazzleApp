@@ -78,6 +78,7 @@ function buildPanelMenu() {
     panelMenu.addEventListener('blur', closePanelMenu);
 
     document.addEventListener('click', (e) => {
+        console.log(e.target.closest('div#panel-menu'));
         if(!e.target.closest('div#panel-menu')) {
             closePanelMenu();
         }
