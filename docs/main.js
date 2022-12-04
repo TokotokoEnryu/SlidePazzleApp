@@ -76,13 +76,13 @@ function main() {
     
     buildInputPane();
 
-    btnStart.onclick = (e) => {
+    btnControl.start.onclick = (e) => {
         console.log("Hello, start calculation.");
     };
-    btnMakeQuiz.onclick = (e) => {
+    btnControl.makeQuiz.onclick = (e) => {
         console.log("Hello, start making quiz.");
     };
-    btnClear.onclick = (e) => {
+    btnControl.clear.onclick = (e) => {
         console.log("Hello, clear input panel.");
     };
 }
