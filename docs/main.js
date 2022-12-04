@@ -37,8 +37,8 @@ function createPazzlePanel() {
     for (let i=0; i<3; i++) {
         for (let j=0; j<3; j++) {
             let rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-            rect.setAttribute('x', 100+j + 5);
-            rect.setAttribute('y', 100+i + 5);
+            rect.setAttribute('x', 100*j + 5);
+            rect.setAttribute('y', 100*i + 5);
             rect.setAttribute('width', 90);
             rect.setAttribute('height', 90);
             rect.colorIndex = 0;
