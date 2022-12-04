@@ -3,6 +3,16 @@ p {
 }
 
 /* basic layout */
+body {
+  width: 90%;
+  margin: 0 auto;
+  @media screen and (max-width: 600px) {
+    width: 98%;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 80%;
+  }
+}
 .panel-box {
   margin: 10px;
   padding: 0.6em;
@@ -34,5 +44,5 @@ p {
 /* individual element */
 #input-pane {
   margin: 0 auto;
-  width: max(80%, 320px);
+  width: max(100%, 320px);
 }
