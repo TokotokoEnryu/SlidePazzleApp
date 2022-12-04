@@ -86,6 +86,8 @@ function createPazzlePanel() {
                 let elem = e.target;
                 selectedPanel = elem;
                 panelMenu.classList.add('show');
+                panelMenu.style.left = elem.pageX + 'px';
+                panelMenu.style.top = elem.pageY + 'px';
                 // elem.colorIndex += 1;
                 // if (elem.colorIndex >= colorList_.length) {
                 //     elem.setAttribute('fill', blankColor);
@@ -116,6 +118,7 @@ function main() {
     console.log("JavaScript Start!");
     
     buildInputPane();
+    buildPanelMenu();
 
     btnControl.start.onclick = (e) => {
         console.log("Hello, start calculation.");
