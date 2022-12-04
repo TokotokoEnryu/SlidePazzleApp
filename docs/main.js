@@ -61,12 +61,12 @@ function createPazzlePanel() {
 
 function buildInputPane() {
     let h2 = document.createElement('h2');
-    h2.textContent('スタート配置');
+    h2.textContent = 'スタート配置';
     paneInput.startPazzlePanel.appendChild(h2);
     paneInput.startPazzlePanel.appendChild(createPazzlePanel());
     
     h2 = document.createElement('h2');
-    h2.textContent('ゴール配置');
+    h2.textContent = 'ゴール配置';
     paneInput.goalPazzlePanel.appendChild(h2);
     paneInput.goalPazzlePanel.appendChild(createPazzlePanel());
 }
