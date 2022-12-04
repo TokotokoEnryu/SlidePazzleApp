@@ -28,8 +28,8 @@ const colorList = {
     'red': '#ff0000',
     'blue': '#0000ff',
     'green': '#00ff00',
-    'yellow': '#ffff00',
-    'black': '#000000',
+    // 'yellow': '#ffff00',
+    // 'black': '#000000',
     'lightgray': '#cccccc'
 };
 const blankColor = '#ffffff';
@@ -47,6 +47,8 @@ function createMenuLi(color) {
     let text = colorText[color];
     li.textContent = text;
     li.onclick = (e) => {
+        console.log(selectedPanel);
+        console.log(color);
         if (color == 'blank') selectedPanel.fill = blankColor;
         else selectedPanel.fill = colorList[color];
         // closePanelMenu();
@@ -87,8 +89,8 @@ function createPazzlePanel() {
                 let elem = e.target;
                 selectedPanel = elem;
                 panelMenu.classList.add('show');
-                panelMenu.style.left = elem.pageX + 'px';
-                panelMenu.style.top = elem.pageY + 'px';
+                panelMenu.style.left = e.clientX + 'px';
+                panelMenu.style.top = e.clientY + 'px';
                 // elem.colorIndex += 1;
                 // if (elem.colorIndex >= colorList_.length) {
                 //     elem.setAttribute('fill', blankColor);
