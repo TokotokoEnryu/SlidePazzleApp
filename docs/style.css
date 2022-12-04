@@ -1,3 +1,37 @@
 p {
   color: rgb(80, 80, 80);
 }
+
+/* basic layout */
+.panel-box {
+  margin: 10px;
+  padding: 0.6em;
+  border: solid 1px lightblue;
+  box-shadow: 3px 3px rgb(1 1 1 / 30%);
+}
+.pazzle-panel-container {
+  display: inline-block;
+  width: max(320px, 50%);
+}
+.pazzle-canvas {
+  border: solid 2px #333;
+  box-shadow: 6px 6px rgb(1 1 1 / 30%);
+  margin: 0 auto;
+}
+
+/* border color */
+.red-border {
+  border-color: coral;
+}
+
+
+.bottom-line-darkcyan {
+  border-bottom: solid 1.5px red;
+}
+
+
+/* individual element */
+#input-pane {
+  margin: 0 auto;
+  width: max(80%, 320px);
+}

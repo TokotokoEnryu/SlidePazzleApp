@@ -2,6 +2,12 @@
 var btnStart = document.getElementById("btn-start");
 var btnMakeQuiz = document.getElementById("btn-makequiz");
 var btnClear = document.getElementById("btn-clear");
+var messageBox = document.getElementById("message-box");
+
+
+function setMessageBox(s) {
+    messageBox.innerHTML = '<p>' + s + '</p>';
+}
 
 function main() {
     console.log("JavaScript Start!");
