@@ -78,7 +78,7 @@ function buildPanelMenu() {
     panelMenu.addEventListener('blur', closePanelMenu);
 
     document.addEventListener('click', (e) => {
-        if(!e.target.closest('div#panelmenu')) {
+        if(!e.target.closest('div#panel-menu')) {
             closePanelMenu();
         }
     });
