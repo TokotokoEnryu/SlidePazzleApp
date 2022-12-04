@@ -78,8 +78,8 @@ function buildPanelMenu() {
     panelMenu.addEventListener('blur', closePanelMenu);
 
     document.addEventListener('click', (e) => {
-        console.log(e.target.closest('div#panel-menu'));
-        if(!e.target.closest('div#panel-menu')) {
+        console.log(e.target.closest('.pazzle-canvas'));
+        if(!e.target.closest('.pazzle-canvas')) {
             closePanelMenu();
         }
     });
