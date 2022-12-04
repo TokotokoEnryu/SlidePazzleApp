@@ -21,7 +21,7 @@ body {
 }
 .pazzle-panel-container {
   display: inline-block;
-  width: max(320px, 50%);
+  width: max(320px, 49%);
 }
 .pazzle-canvas {
   border: solid 2px #333;
