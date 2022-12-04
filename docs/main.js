@@ -50,7 +50,7 @@ function createPazzlePanel() {
                     elem.setAttribute('fill', blankColor);
                     elem.colorIndex = -1;
                 } else {
-                    elem.setAttribute('fill', colorIndex_[elem.colorIndex]);
+                    elem.setAttribute('fill', colorList_[elem.colorIndex]);
                 }
             };
             svg.appendChild(rect);
