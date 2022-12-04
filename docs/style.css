@@ -6,13 +6,18 @@ p {
 body {
   width: 90%;
   margin: 0 auto;
-  @media screen and (max-width: 600px) {
+}
+@media screen and (max-width: 600px) {
+  body {
     width: 98%;
   }
-  @media screen and (min-width: 1200px) {
+}
+@media screen and (min-width: 1200px) {
+  body {
     width: 80%;
   }
 }
+
 .panel-box {
   margin: 10px;
   padding: 0.6em;
@@ -30,7 +35,9 @@ body {
 }
 .input-pazzle-canvas {
   margin-left: calc(49% - 160px);
-  @media screen and (max-width: 734px) {
+}
+@media screen and (max-width: 734px) {
+  .input-pazzle-canvas {
     margin-left: calc(100% - 160px);
   }
 }
