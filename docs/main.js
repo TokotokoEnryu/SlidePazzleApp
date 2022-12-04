@@ -40,6 +40,7 @@ function setMessageBox(s) {
 
 function closePanelMenu() {
     panelMenu.classList.remove('show');
+    console.log('close panel menu!');
 }
 var selectedPanel = undefined;
 function createMenuLi(color) {
@@ -49,9 +50,9 @@ function createMenuLi(color) {
     li.onclick = (e) => {
         console.log(selectedPanel);
         console.log(color);
-        if (color == 'blank') selectedPanel.fill = blankColor;
-        else selectedPanel.fill = colorList[color];
-        // closePanelMenu();
+        if (color == 'blank') selectedPanel.setAttribute('fill', blankColor);
+        else selectedPanel.setAttribute('fill', colorList[color]);
+        closePanelMenu();
     };
     return li;
 }
