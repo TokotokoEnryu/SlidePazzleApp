@@ -77,7 +77,11 @@ function buildPanelMenu() {
     panelMenu.appendChild(elem);
     panelMenu.addEventListener('blur', closePanelMenu);
 
-    document.addEventListener('click', closePanelMenu);
+    document.addEventListener('click', (e) => {
+        if(!e.target.closest('div#panelmenu')) {
+            closePanelMenu();
+        }
+    });
 }
 function createPazzlePanel() {
     let svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
