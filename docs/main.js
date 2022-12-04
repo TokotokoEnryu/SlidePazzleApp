@@ -61,14 +61,14 @@ function createPazzlePanel() {
 }
 
 function buildInputPane() {
-    let h2 = document.createElement('h2');
-    h2.textContent = 'スタート配置';
-    paneInput.startPazzlePanel.appendChild(h2);
+    let lbl = document.createElement('p');
+    lbl.textContent = 'スタート配置';
+    paneInput.startPazzlePanel.appendChild(lbl);
     paneInput.startPazzlePanel.appendChild(createPazzlePanel());
     
-    h2 = document.createElement('h2');
-    h2.textContent = 'ゴール配置';
-    paneInput.goalPazzlePanel.appendChild(h2);
+    lbl = document.createElement('p');
+    lbl.textContent = 'ゴール配置';
+    paneInput.goalPazzlePanel.appendChild(lbl);
     paneInput.goalPazzlePanel.appendChild(createPazzlePanel());
 }
 
