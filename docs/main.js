@@ -6,6 +6,8 @@ paneInput.goalPazzlePanel = document.getElementById("goal-pazzle-panel-input");
 var paneOutput = document.getElementById("output-pane");
 paneOutput.pazzleContainer = document.getElementById("output-pazzle-panel-container");
 
+var panelMenu = document.getElementById("panel-menu");
+
 var btnControl = {
     'start': document.getElementById("btn-start"),
     'makeQuiz': document.getElementById("btn-makequiz"),
@@ -13,7 +15,15 @@ var btnControl = {
 };
 var messageBox = document.getElementById("message-box");
 
-
+const colorText = {
+    'blank': '空白',
+    'red': '赤',
+    'blue': '青',
+    'green': '緑',
+    // 'yellow': '黄色',
+    'lightgray': '白',
+    // 'black': '黒'
+};
 const colorList = {
     'red': '#ff0000',
     'blue': '#0000ff',
@@ -28,6 +38,34 @@ function setMessageBox(s) {
     messageBox.innerHTML = '<p>' + s + '</p>';
 }
 
+function closePanelMenu() {
+    panelMenu.classList.remove('show');
+}
+var selectedPanel = undefined;
+function createMenuLi(color) {
+    let li = document.createElement("li");
+    let text = colorText[color];
+    li.textContent = text;
+    li.onclick = (e) => {
+        if (color == 'blank') selectedPanel.fill = blankColor;
+        else selectedPanel.fill = colorList[color];
+        // closePanelMenu();
+    };
+}
+// input pattern: <li><input type="text" placeholder="その他の文字"></li>
+
+function buildPanelMenu() {
+    let elem = document.createElement("ul");
+    let li = createMenuLi('blank');
+    elem.appendChild(li);
+    for (let c of Object.keys(colorList)) {
+        li = craeteMenuLi(c);
+        elem.appendChild(li);
+    }
+    panelMenu.innerHTML = "";
+    panelMenu.appendChild(elem);
+    panelMenu.addEventListener('blur', closePanelMenu);
+}
 function createPazzlePanel() {
     let svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     svg.setAttribute('width', 300);
@@ -46,13 +84,15 @@ function createPazzlePanel() {
             rect.setAttribute('fill', blankColor);
             rect.onclick = (e) => {
                 let elem = e.target;
-                elem.colorIndex += 1;
-                if (elem.colorIndex >= colorList_.length) {
-                    elem.setAttribute('fill', blankColor);
-                    elem.colorIndex = -1;
-                } else {
-                    elem.setAttribute('fill', colorList_[elem.colorIndex]);
-                }
+                selectedPanel = elem;
+                panelMenu.classList.add('show');
+                // elem.colorIndex += 1;
+                // if (elem.colorIndex >= colorList_.length) {
+                //     elem.setAttribute('fill', blankColor);
+                //     elem.colorIndex = -1;
+                // } else {
+                //     elem.setAttribute('fill', colorList_[elem.colorIndex]);
+                // }
             };
             svg.appendChild(rect);
         }
