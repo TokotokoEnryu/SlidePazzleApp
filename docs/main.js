@@ -51,6 +51,7 @@ function createMenuLi(color) {
         else selectedPanel.fill = colorList[color];
         // closePanelMenu();
     };
+    return li;
 }
 // input pattern: <li><input type="text" placeholder="その他の文字"></li>
 
