@@ -38,9 +38,16 @@ function setMessageBox(s) {
     messageBox.innerHTML = '<p>' + s + '</p>';
 }
 
+var noscroll;
+function showPanelMenu() {
+    panelMenu.classList.add('show');
+    noscroll = document.addEventListener('onscroll', (e) => {
+        e.preventDefault();
+    });
+}
 function closePanelMenu() {
     panelMenu.classList.remove('show');
-    console.log('close panel menu!');
+    document.removeEventListener('onscroll', noscroll);
 }
 var selectedPanel = undefined;
 function createMenuLi(color) {
@@ -48,8 +55,6 @@ function createMenuLi(color) {
     let text = colorText[color];
     li.textContent = text;
     li.onclick = (e) => {
-        console.log(selectedPanel);
-        console.log(color);
         if (color == 'blank') selectedPanel.setAttribute('fill', blankColor);
         else selectedPanel.setAttribute('fill', colorList[color]);
         closePanelMenu();
@@ -89,7 +94,7 @@ function createPazzlePanel() {
             rect.onclick = (e) => {
                 let elem = e.target;
                 selectedPanel = elem;
-                panelMenu.classList.add('show');
+                showPanelMenu();
                 panelMenu.style.left = e.clientX + 'px';
                 panelMenu.style.top = e.clientY + 'px';
                 // elem.colorIndex += 1;
