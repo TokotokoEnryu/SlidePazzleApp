@@ -33,6 +33,7 @@ function createPazzlePanel() {
     svg.setAttribute('width', 300);
     svg.setAttribute('height', 300);
     svg.classList.add("pazzle-canvas");
+    svg.classList.add("input-pazzle-canvas");
     let colorList_ = Object.values(colorList);
     for (let i=0; i<3; i++) {
         for (let j=0; j<3; j++) {
