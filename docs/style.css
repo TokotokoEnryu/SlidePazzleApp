@@ -41,7 +41,30 @@ body {
     margin-left: calc(100% - 160px);
   }
 }
-
+.panelmenu {
+  display: none;
+  position: fixed;
+  width: 200px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 1px rgb(0 0 0 / 20%);
+  z-index: 1000;
+}
+.panelmenu.show {
+  display: block;
+}
+.panelmenu ul {
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+}
+.panelmenu ul li {
+  padding: 4px 10px;
+  font-size: 14px;
+}
+.panelmenu ul li:hover {
+  background-color: lightblue;
+}
 /* border color */
 .red-border {
   border-color: coral;
