@@ -60,7 +60,7 @@ function buildPanelMenu() {
     let li = createMenuLi('blank');
     elem.appendChild(li);
     for (let c of Object.keys(colorList)) {
-        li = craeteMenuLi(c);
+        li = createMenuLi(c);
         elem.appendChild(li);
     }
     panelMenu.innerHTML = "";
