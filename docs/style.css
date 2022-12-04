@@ -62,6 +62,9 @@ body {
   padding: 4px 10px;
   font-size: 14px;
 }
+.panelmenu ul li:first-child {
+  border-bottom: solid 1px #aaa;
+}
 .panelmenu ul li:hover {
   background-color: lightblue;
 }
