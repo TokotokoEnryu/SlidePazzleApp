@@ -38,16 +38,18 @@ function setMessageBox(s) {
     messageBox.innerHTML = '<p>' + s + '</p>';
 }
 
-var noscroll;
+function noscroll(e) {
+    e.preventDefault();
+};
 function showPanelMenu() {
     panelMenu.classList.add('show');
-    noscroll = document.addEventListener('onscroll', (e) => {
-        e.preventDefault();
-    });
+    document.addEventListener('wheel', noscroll);
+    document.addEventListener('touchmove', noscroll);
 }
 function closePanelMenu() {
     panelMenu.classList.remove('show');
-    document.removeEventListener('onscroll', noscroll);
+    document.removeEventListener('touchmove', noscroll);
+    document.removeEventListener('wheel', noscroll);
 }
 var selectedPanel = undefined;
 function createMenuLi(color) {
