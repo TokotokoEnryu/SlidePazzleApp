@@ -271,6 +271,7 @@ class Board extends Page {
                 this.clearPanel(rect);
             }
         }
+        this.resetGoalCell();
         this.elems.leastCount.textContent = "";
         // this.hideOutput();
     }
