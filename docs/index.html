@@ -3,6 +3,9 @@
   <head>
     <meta charset="utf-8">
     <title>回転パズル計算機</title>
+    <script src="common.js"></script>
+    <script src="builder.js"></script>
+    <script src="board.js"></script>
     <script src="main.js" defer></script>
     <link rel="stylesheet" href="style.css">
   </head>
@@ -42,9 +45,10 @@
     <section id="output-section">
       <div id="output-pane">
         <h2 class="bottom-line-coral">出力パネル</h2>
-        <p>最小手数: <span id="least-count-output"></span></p>
         <div id="output-grid-pane">
-          <p>手順</p>
+          <p id="output-display-trigger" class="hide-grid">手順を見る</p>
+          <div id="output-pazzle-panel-container" hidden></div>
+          <div class="clear-both"></div>
         </div>
       </div>
     </section>
