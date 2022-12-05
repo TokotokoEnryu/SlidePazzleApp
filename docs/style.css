@@ -1,11 +1,18 @@
 p {
-  color: rgb(80, 80, 80);
+  padding: 0;
+  margin: 0;
+}
+.float-right {
+  float: right;
+}
+.clear-both {
+  clear: both;
 }
 
 /* basic layout */
 body {
   width: 90%;
-  margin: 0 auto;
+  margin: 0 auto 80px;
 }
 @media screen and (max-width: 600px) {
   body {
@@ -17,7 +24,6 @@ body {
     width: 80%;
   }
 }
-
 .panel-box {
   margin: 10px;
   padding: 0.6em;
@@ -30,11 +36,14 @@ body {
 }
 .pazzle-canvas {
   border: solid 2px #333;
-  box-shadow: 6px 6px rgb(1 1 1 / 30%);
   margin: 0 auto;
+}
+.input-pazzle-canvas rect:hover {
+  cursor: pointer;
 }
 .input-pazzle-canvas {
   margin-left: calc(49% - 160px);
+  box-shadow: 6px 6px rgb(1 1 1 / 30%);
 }
 @media screen and (max-width: 734px) {
   .input-pazzle-canvas {
@@ -68,6 +77,30 @@ body {
 .panelmenu ul li:hover {
   background-color: lightblue;
 }
+.message-box {
+  background-color: #eee;
+  padding: 6px;
+  overflow-y: scroll;
+  min-height: 4em;
+  margin-top: 10px;
+}
+#message-box p {
+  font-size: 12px;
+}
+#message-box.error p {
+  color: red;
+  font-weight: bold;
+}
+.output-cell {
+  float: left;
+  margin: 0 5px;
+}
+.output-cell.goal p:after {
+  content: 'ゴール';
+  margin-left: 10px;
+  color: red;
+}
+
 /* border color */
 .red-border {
   border-color: coral;
@@ -84,4 +117,65 @@ body {
 #input-pane {
   margin: 0 auto;
   width: max(100%, 320px);
+}
+#message-pane {
+  width: 90%;
+}
+#least-count-pane {
+  display: inline-block;
+}
+#least-count-pane p, #least-count-pane div {
+  display: inherit;
+}
+#least-count {
+  font-size: 24px;
+  border: solid 1px #333;
+  padding: 5px;
+  width: 3em;
+  text-align: center;
+  margin-left: 10px;
+}
+#control-button-container button {
+  font-weight: bold;
+  padding: 8px;
+  border-radius: 10px;
+}
+#btn-start {
+  background-color: pink;
+  border-color: lightcoral;
+}
+#btn-makequiz {
+  background-color: lightblue;
+  border-color: mediumaquamarine;
+}
+#btn-clear {
+  background-color: lightgray;
+  border-color: darkgray;
+}
+#least-count:before, #least-count:after {
+  content: '_';
+  font-size: 1px;
+  color: transparent;
+}
+#output-display-trigger:hover {
+  color: lightblue;
+  cursor: pointer;
+}
+#output-display-trigger:after {
+  color: blue;
+  padding-left: 6px;
+}
+#output-display-trigger.hide-grid:after {
+  content: '▼';
+}
+#output-display-trigger.show-grid:after {
+  content: '▲';
+}
+/* #output-pazzle-panel-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+*/
+#output-grid-pane {
+  width: min(728px, 80%);
+  margin: 0 auto;
 }
