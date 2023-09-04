@@ -57,7 +57,7 @@ class PazzleState {
     getNextState(){
         // var prev_hole = this.get_last_move();
         var nextHole = [];
-        if (this.hole > 3) nextHole.push(this.hole - 3); // up
+        if (this.hole >= 3) nextHole.push(this.hole - 3); // up
         if (this.hole % 3 > 0) nextHole.push(this.hole - 1); // left
         if (this.hole % 3 < 2) nextHole.push(this.hole + 1); // right
         if (this.hole < 6) nextHole.push(this.hole + 3); // down
